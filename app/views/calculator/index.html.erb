@@ -2,7 +2,7 @@
 <%= form_with url: calculate_path, method: :post, local: true do |form| %>
   <div>
     <%= form.label :first_number, "First Number:" %>
-    <%= form.number_field :first_number %>
+    <%= form.number_field :first_number, step: :any %>
   </div>
   
   <div>
@@ -12,7 +12,7 @@
   
   <div>
     <%= form.label :second_number, "Second Number:" %>
-    <%= form.number_field :second_number %>
+    <%= form.number_field :second_number, step: :any %>
   </div>
   
   <div>
@@ -20,6 +20,6 @@
   </div>
 <% end %>
 
-<% if defined?(@result) %>
+<% if @result.present? %>
   <h2>Result: <%= @result %></h2>
 <% end %>
